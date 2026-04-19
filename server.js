@@ -2,6 +2,7 @@ console.log('Web serverni boshlash');
 const express = require("express");
 const app = express();
 const http = require("http");
+const { start } = require("repl");
 
 
 //1 Kirish codlari
@@ -18,14 +19,13 @@ app.set("views", "views");
 app.set("view engine", "ejs");
 
 // 4 Routing codelari
-
-app.get("/hello", function (req, res) {
-    res.end(`<h1> HELLO WORLD </h1>`);
-});
-
-app.get("/gift", function (req, res) {
-    res.end(`<h1> SOVG'ALAR  BO'LIMIDASIZ </h1>`);
-});
+app.post("/create-item", (req, res) => {
+    console.log(req.body);
+    res.json({ test: "success" });
+})
+app.get("/", function (req, res) {
+    res.render('harid');
+})
 
 const server = http.createServer(app);
 let PORT = 3000;
