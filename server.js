@@ -29,7 +29,7 @@ app.get("/", function (req, res) {
 })
 
 const server = http.createServer(app);
-let PORT = 3000;
+let PORT = 3001;
 server.listen(PORT, function () {
     console.log(`the server is running succesfully on port:${PORT}`);
 });
