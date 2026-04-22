@@ -3,8 +3,19 @@ const express = require("express");
 const app = express();
 const http = require("http");
 const { start } = require("repl");
+const fs = require("fs");
 
 
+let user;
+fs.readFile("database/user.json", "utf8", (err, data) => {
+    if (err) {
+        console.log("ERROR:", err);
+        return;
+    } else {
+        user = JSON.parse(data);
+        console.log(user);
+    }
+});
 //1 Kirish codlari
 
 app.use(express.static("public"));
@@ -24,12 +35,16 @@ app.post("/create-item", (req, res) => {
     res.json({ test: "success" });
 })
 
+app.get("/project", (req, res) => {
+    res.render("project", { user: user });
+})
+
 app.get("/", function (req, res) {
     res.render("harid");
 })
 
 const server = http.createServer(app);
-let PORT = 3001;
+let PORT = 3300;
 server.listen(PORT, function () {
     console.log(`the server is running succesfully on port:${PORT}`);
 });
