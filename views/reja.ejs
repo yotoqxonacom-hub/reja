@@ -12,7 +12,7 @@
 
 <body style="background-color: #b8bbd1;">
     <div class="container">
-        <h1 style="text-align: center;" class="display-4 text-center py-1"> REJA va MAQSADLAR</h1>git
+        <h1 style="text-align: center;" class="display-4 text-center py-1"> REJA va MAQSADLAR</h1>
 
         <div style="text-align: center;" class="jumbotron p-3 shadow-sm">
             <form id="create-field" action="/create-item" method="POST">
@@ -20,11 +20,33 @@
                     <input id="create-field" name="item" autofocus autocomplete="off" class="form-control mr-3"
                         type="text" style="flex: 1" />
                     <button class="btn btn-primary" style="border-radius: 20px">
-                        Yangi Harid Qushish
+                        Yangi Reja Qurish
                     </button>
                 </div>
             </form>
         </div>
+
+        <ul id="item-list" class="list-group pb-5">
+
+            <% items.map(function(item) { %>
+                <li class="list-group-item list-group-item-info d-flex align-items-center justify-content-between">
+                    <span class="item-text">
+                        <%=item.reja%>
+                    </span>
+                    <div>
+                        <button data-id="<%=item._id%>" class="edit-me btn btn-secondary btn-sm mr-1">
+                            O'zgartirish
+                        </button>
+                        <button class="delete-me btn btn-danger btn-sm">O'chirish</button>
+                    </div>
+                </li>
+                <% }) %>
+
+        </ul>
+
+        <button data-id="<%=item._id%>" id="clean-all" class="btn btn-danger" style="border-radius: 20px">
+            Hammasini Rejalarni O'chirish
+        </button>
     </div>
 
 </body>

@@ -27,16 +27,16 @@ console.log("Train task ishga tushdi  <--->");
 //console.log('result:', result);
 
 // CALLBACK functions
-console.log("Jack Ma's advises : ==>");
+//console.log("Jack Ma's advises : ==>");
 
-const list = [
-    "try to be a good student", // 0 - 20
-    "choose the right boss and do a lot of mistakes", // 20 - 30
-    "work for yourself", //30 - 40
-    "do what you are good at",  // 40 - 50
-    "help young people to reach their bright future",//50 - 60
-    "just take rest because you missed the right time already", // 60 ++
-];
+//\const list = [
+//  "try to be a good student", // 0 - 20
+// "choose the right boss and do a lot of mistakes", // 20 - 30
+//  "work for yourself", //30 - 40
+// "do what you are good at",  // 40 - 50
+// "help young people to reach their bright future",//50 - 60
+// "just take rest because you missed the right time already", // 60 ++
+//];
 
 // CALLBACK
 
@@ -93,7 +93,7 @@ const list = [
 
 
 
-//then , chatch
+// call via then , chatch
 
 //console.log('passed here , 1');
 
@@ -107,6 +107,8 @@ const list = [
 
 //console.log('passed here , 2');
 
+
+// call via ASYNC function
 
 //async function run() {
 //  let answer = await giveAdvise(17);
@@ -122,27 +124,27 @@ const list = [
 
 // setInterval with callback
 
-function giveAdvise(a, callback) {
-    if (typeof a !== "number") callback("insert a number", null);
-    else if (a <= 20) callback(null, list[0]);
-    else if (a > 20 && a <= 30) callback(null, list[1]);
-    else if (a > 30 && a <= 40) callback(null, list[2]);
-    else if (a > 40 && a <= 50) callback(null, list[3]);
-    else if (a > 50 && a <= 60) callback(null, list[4]);
-    else {
+//function giveAdvise(a, callback) {
+//if (typeof a !== "number") callback("insert a number", null);
+//else if (a <= 20) callback(null, list[0]);
+//else if (a > 20 && a <= 30) callback(null, list[1]);
+// else if (a > 30 && a <= 40) callback(null, list[2]);
+// else if (a > 40 && a <= 50) callback(null, list[3]);
+// else if (a > 50 && a <= 60) callback(null, list[4]);
+// else {
 
-    }
-    setInterval(function () {
-        callback(null, list[5]);
-    }, 1000);
-}
+// }
+// setInterval(function () {
+//     callback(null, list[5]);
+// }, 1000);
+//}
 
-console.log('passed here , 1');
-giveAdvise(66, (err, data) => {
-    if (err) console.log('ERROR', err);
-    else {
-        console.log("answer:", data);
-    }
-});
+//console.log('passed here , 1');
+//giveAdvise(66, (err, data) => {
+// if (err) console.log('ERROR', err);
+//  else {
+//     console.log("answer:", data);
+// }
+//});
 
-console.log('passed here , 2');
+//console.log('passed here , 2');
