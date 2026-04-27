@@ -17,7 +17,7 @@
         <div style="text-align: center;" class="jumbotron p-3 shadow-sm">
             <form id="create-field" action="/create-item" method="POST">
                 <div class="d-flex align-items-center">
-                    <input id="create-field" name="item" autofocus autocomplete="off" class="form-control mr-3"
+                    <input id="create-field" name="reja" autofocus autocomplete="off" class="form-control mr-3"
                         type="text" style="flex: 1" />
                     <button class="btn btn-primary" style="border-radius: 20px">
                         Yangi Reja Qurish
@@ -27,26 +27,26 @@
         </div>
 
         <ul id="item-list" class="list-group pb-5">
-
             <% items.map(function(item) { %>
                 <li class="list-group-item list-group-item-info d-flex align-items-center justify-content-between">
                     <span class="item-text">
-                        <%=item.reja%>
+                        <%= item.reja %>
                     </span>
                     <div>
-                        <button data-id="<%=item._id%>" class="edit-me btn btn-secondary btn-sm mr-1">
-                            O'zgartirish
-                        </button>
-                        <button class="delete-me btn btn-danger btn-sm">O'chirish</button>
+                        <button data-id="<%= item._id %>" class="btn btn-secondary btn-sm">O'zgartirish</button>
+                        <button data-id="<%= item._id %>" class="btn btn-danger btn-sm">O'chirish</button>
                     </div>
                 </li>
                 <% }) %>
+        </ul>;
 
-        </ul>
 
-        <button data-id="<%=item._id%>" id="clean-all" class="btn btn-danger" style="border-radius: 20px">
+
+        <button class="btn btn-danger" style="border-radius: 20px">
             Hammasini Rejalarni O'chirish
         </button>
+
+
     </div>
 
 </body>

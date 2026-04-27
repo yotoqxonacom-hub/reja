@@ -17,9 +17,9 @@ fs.readFile("database/user.json", "utf8", (err, data) => {
 });
 
 // MongoDB call
-//const db = require("./server").db();
-//const mongodb = require("mongodb");
-
+const db = require("./server").db();
+const { MongoClient } = require("mongodb");
+const client = new MongoClient("mongodb://localhost:27017", { useUnifiedTopology: true });
 
 //1 Kirish codlari
 
@@ -38,33 +38,32 @@ app.set("view engine", "ejs");
 app.post("/create-item", (req, res) => {
     console.log("user entered / create-item")
     console.log(req.body);
-    db.collection("plan").insertOne({ reja: new_reja }, (err, data) => {
+    const new_reja = req.body.reja;
+    db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
         if (err) {
             console.log(err);
-            res.end("somthing went wrong");
+            res.send("somthing went wrong");
         } else {
             console.log("succesfully added");
         }
     })
-    res.json({ test: "success" });
-})
+});
 
-app.get("/project", (req, res) => {
-    console.log("user entered /")
-    res.render("project", { user: user });
-})
+//app.get("/project", (req, res) => {
+// console.log("user entered /")
+// res.render("project", { user: user });
+//})
 
-app.get("/", function (req, res) {
-    console.log("user entered /")
+app.get("/", (req, res) => {
     db.collection("plans").find().toArray((err, data) => {
         if (err) {
-            console.log(err);
-            res.end("somthing went wrong");
+            res.send("something went wrong");
         } else {
-            res.render("reja", { items: data });
+            res.render("reja", { items: data }); // items nomi bilan uzatish
         }
-    })
-})
+    });
+});
+
 
 
 module.exports = app;
