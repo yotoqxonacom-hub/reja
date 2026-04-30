@@ -1,18 +1,30 @@
 console.log("Train task ishga tushdi  <--->");
 
-
-function numbers(a) {
-    let count = 0;
+// MITASK C
+function harf(a, b) {
     for (let i = 0; i < a.length; i++) {
-        if (a[i] >= '0' && a[i] <= '9') {
-            count++;
+        if (b.includes(a[i])) {
+            return true
         }
+        return false
     }
-    return count;
 }
+console.log(harf("oppoq", "qopqoq"));
+console.log(harf("asdfgh", "bvcxz"));
 
-const result = numbers("w2f5j7k9v4vf3");
-console.log(result);
+
+//function numbers(a) {
+//   let count = 0;
+//    for (let i = 0; i < a.length; i++) {
+//       if (a[i] >= '0' && a[i] <= '9') {
+//         count++;
+//    }
+//  }
+//   return count;
+//}
+
+//const result = numbers("w2f5j7k9v4vf3");
+//console.log(result);
 
 //function training(a, alhamdulillah) {
 //const letter = a;

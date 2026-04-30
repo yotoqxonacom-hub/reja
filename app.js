@@ -20,7 +20,7 @@ fs.readFile("database/user.json", "utf8", (err, data) => {
 const db = require("./server").db();
 const { MongoClient } = require("mongodb");
 const client = new MongoClient("mongodb://localhost:27017", { useUnifiedTopology: true });
-
+const mongodb = require("mongodb");
 //1 Kirish codlari
 
 app.use(express.static("public"));
@@ -44,6 +44,19 @@ app.post("/create-item", (req, res) => {
         res.json(data.ops[0]);
     });
 });
+
+app.post("/delete-item", (req, res) => {
+    const id = req.body.id;
+    db.collection("plans").deleteOne(
+        { _id: new mongodb.ObjectId(id) },
+        function (err, data) {
+            res.json({ state: "success" });
+        },
+    );
+    // console.log(id);
+    // res.end("done");
+});
+
 
 //app.get("/project", (req, res) => {
 // console.log("user entered /")
