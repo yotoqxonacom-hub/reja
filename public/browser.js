@@ -1,5 +1,7 @@
 
 
+
+
 console.log("FronEnd JS started");
 
 function itemTemplate(item) {
@@ -50,10 +52,30 @@ document.addEventListener("click", function (e) {
                 });
         }
     }
+
+
+    // --> EDIT OPERATIONS
+    if (e.target.classList.contains("edit-me")) {
+        let userInput = prompt("O'zgartirishinggizni kiriting", e.target.parentElement.parentElement.querySelector(".item-text").innerHTML);
+        if (userInput) {
+            axios.post("/edit-item", {
+                id: e.target.getAttribute("data-id"),
+                new_input: userInput,
+            }).then(response => {
+                console.log(response.data);
+                e.target.parentElement.parentElement.querySelector(".item-text").innerHTML = userInput;
+            })
+                .catch(err => {
+                    console.log("Please, try again!");
+                })
+        }
+    }
+
 });
 
-// --> EDIT OPERATIONS
-//if (e.target.classList.contains("edit-me")) {
-//alert("siz edit tugmasini bosdinggiz");
-//}
-//});
+document.getElementById("clean-all").addEventListener("click", function () {
+    axios.post("/delete-all", { delete_all: true }).then(response => {
+        alert(response.data.state);
+        document.location.reload();
+    });
+});
