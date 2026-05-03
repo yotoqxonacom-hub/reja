@@ -33,26 +33,42 @@ document.getElementById("create-form").addEventListener("submit", function (e) {
 });
 
 
-
-
-
-// --> EDIT OPERATIONS
-if (e.target.classList.contains("edit-me")) {
-    let userInput = prompt("O'zgartirishinggizni kiriting", e.target.parentElement.parentElement.querySelector(".item-text").innerHTML);
-    if (userInput) {
-        axios.post("/edit-item", {
-            id: e.target.getAttribute("data-id"),
-            new_input: userInput,
-        }).then(response => {
-            console.log(response.data);
-            e.target.parentElement.parentElement.querySelector(".item-text").innerHTML = userInput;
-        })
-            .catch(err => {
-                console.log("Please, try again!");
-            })
+document.addEventListener("click", function (e) {
+    // delete oper
+    console.log(e.target);
+    if (e.target.classList.contains("delete-me")) {
+        if (confirm("Are you sure to delete?")) {
+            axios
+                .post("/delete-item", { id: e.target.getAttribute("data-id") })
+                .then((response) => {
+                    console.log(response.data);
+                    e.target.parentElement.parentElement.remove();
+                })
+                .catch((err) => {
+                    console.log("Please, try again!");
+                });
+        }
     }
-}
 
+
+    // --> EDIT OPERATIONS
+    if (e.target.classList.contains("edit-me")) {
+        let userInput = prompt("O'zgartirishinggizni kiriting", e.target.parentElement.parentElement.querySelector(".item-text").innerHTML);
+        if (userInput) {
+            axios.post("/edit-item", {
+                id: e.target.getAttribute("data-id"),
+                new_input: userInput,
+            }).then(response => {
+                console.log(response.data);
+                e.target.parentElement.parentElement.querySelector(".item-text").innerHTML = userInput;
+            })
+                .catch(err => {
+                    console.log("Please, try again!");
+                })
+        }
+    }
+
+});
 
 
 document.getElementById("clean-all").addEventListener("click", function () {
