@@ -1,50 +1,63 @@
+
+
 console.log("Train task ishga tushdi  <--->");
 
-//MITASK D
-const moment = require("moment");
-
-class Shop {
-    constructor(laptops, phones, tvs, amount) {
-        this.laptops = laptops;
-        this.phones = phones;
-        this.tvs = tvs;
-        this.amount = amount;
-
-
-        this.productNames = ["Laptops", "Phones", "TVs"];
-    }
-
-    buyThings(product, amount) {
-        if (product === "Laptops") this.laptops += amount;
-        if (product === "Phones") this.phones += amount;
-        if (product === "TVs") this.tvs += amount;
-        this.amount += amount;
-
-        console.log(
-            `bought ${amount} ${product}, totals: ${this.laptops} ${this.productNames[0]}, ${this.phones} ${this.productNames[1]}, ${this.tvs} ${this.productNames[2]}, ${this.amount} total:, time: ${moment().format('HH:mm')}`
-        );
-    }
-
-    soldOut(product, amount) {
-        if (product === "Laptops" && this.laptops >= amount) this.laptops -= amount;
-        else if (product === "Phones" && this.phones >= amount) this.phones -= amount;
-        else if (product === "TVs" && this.tvs >= amount) this.tvs -= amount;
-        else {
-            console.log(`Not enough: ${product} to sell:, time: ${moment().format('HH:mm')}`);
-            return;
-        }
-        this.amount -= amount;
-        console.log(
-            `sold: ${amount} ${product}, totals: ${this.laptops} ${this.productNames[0]}, ${this.phones} ${this.productNames[1]}, ${this.tvs} ${this.productNames[2]}, ${this.amount} total:, time: ${moment().format('HH:mm')}`
-        );
-    }
+// MITASK E
+function teskari(a) {
+    const text = a;
+    for (let i = 0; i < text.length; i++);
+    return text
+        .split("").reverse(text).join("");
 }
+const result = teskari("bashar");
+console.log(result);
 
 
-const myshop = new Shop(20, 20, 20, 0)
+//MITASK D
+//const moment = require("moment");
 
-myshop.buyThings("Phones", 3);
-myshop.soldOut("Laptops", 25);
+//class Shop {
+// constructor(laptops, phones, tvs, amount) {
+//   this.laptops = laptops;
+// this.phones = phones;
+//this.tvs = tvs;
+// this.amount = amount;
+
+
+//this.productNames = ["Laptops", "Phones", "TVs"];
+//}
+
+//buyThings(product, amount) {
+//  if (product === "Laptops") this.laptops += amount;
+//  if (product === "Phones") this.phones += amount;
+//  if (product === "TVs") this.tvs += amount;
+//  this.amount += amount;
+
+// console.log(
+//     `bought ${amount} ${product}, totals: ${this.laptops} ${this.productNames[0]}, ${this.phones} ${this.productNames[1]}, ${this.tvs} ${this.productNames[2]}, ${this.amount} total:, time: ${moment().format('HH:mm')}`
+// );
+//}
+
+//soldOut(product, amount) {
+//  if (product === "Laptops" && this.laptops >= amount) this.laptops -= amount;
+//  else if (product === "Phones" && this.phones >= amount) this.phones -= amount;
+//  else if (product === "TVs" && this.tvs >= amount) this.tvs -= amount;
+//  else {
+///      console.log(`Not enough: ${product} to sell:, time: ${moment().format('HH:mm')}`);
+//      return;
+//  }
+//  this.amount -= amount;
+//  console.log(
+//      `sold: ${amount} ${product}, totals: ${this.laptops} ${this.productNames[0]}, ${this.phones} ${this.productNames[1]}, ${this.tvs} ${this.productNames[2]}, ${this.amount} total:, time: ${moment().format('HH:mm')}`
+//  );
+//}
+//}
+
+
+//const myshop = new Shop(20, 20, 20, 0)
+
+//myshop.buyThings("Phones", 3);
+//myshop.soldOut("Laptops", 25);
 
 // MITASK C
 //function harf(a, b) {
