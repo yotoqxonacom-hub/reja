@@ -2,7 +2,7 @@
 
 console.log("Train task ishga tushdi  <--->");
 
-// MITASK E
+// MITASK F: MITASK F
 function findDubler(a) {
     const text = a;
     for (let i = 0; i < text.length; i++);
