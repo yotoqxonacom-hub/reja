@@ -12,7 +12,7 @@ function findDubler(a) {
 const result = findDubler("mashaqqat");
 console.log(result);
 
-// MITASK E
+// MITASK Egi
 //function teskari(a) {
 //   const text = a;
 //    for (let i = 0; i < text.length; i++);
