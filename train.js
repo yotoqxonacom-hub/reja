@@ -2,15 +2,24 @@
 
 console.log("Train task ishga tushdi  <--->");
 
-// MITASK F: MITASK F
-function findDubler(a) {
-    const text = a;
-    for (let i = 0; i < text.length; i++);
-    return text
-        .includes("a");
+// MITASK G
+function kattaIndex(arr) {
+    let max = Math.max(...arr);
+    return arr.indexOf(max);
 }
-const result = findDubler("mashaqqat");
-console.log(result);
+
+console.log(kattaIndex([12, 23, 46, 3, 67, 8, 54]));
+
+
+// MITASK F: MITASK F
+//function findDubler(a) {
+//   const text = a;
+//  for (let i = 0; i < text.length; i++);
+//   return text
+//      .includes("a");
+//}
+//const result = findDubler("mashaqqat");
+//console.log(result);
 
 // MITASK Egi
 //function teskari(a) {
