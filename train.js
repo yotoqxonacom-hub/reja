@@ -1,14 +1,30 @@
-
-
 console.log("Train task ishga tushdi  <--->");
 
-// MITASK G
-function kattaIndex(arr) {
-    let max = Math.max(...arr);
-    return arr.indexOf(max);
+// MITASK H
+
+// positive sonlarni qaytaruvchi function
+function getPositive(arr) {
+    return arr.filter(num => num > 0);
 }
 
-console.log(kattaIndex([12, 23, 46, 3, 67, 8, 54]));
+const result = getPositive([-1, 2, -3, 4, -5, 6]);
+console.log("result:", result);
+
+// negative sonlarni qaytaruvchi function
+function getNegative(arr) {
+    return arr.filter(num => num < 0);
+}
+
+const negativeResult = getNegative([-1, 2, -3, 4, -5, 6]);
+console.log("negative result:", negativeResult);
+
+// MITASK G
+//function kattaIndex(arr) {
+// let max = Math.max(...arr);
+// return arr.indexOf(max);
+//}
+
+//console.log(kattaIndex([12, 23, 46, 3, 67, 8, 54]));
 
 
 // MITASK F: MITASK F
