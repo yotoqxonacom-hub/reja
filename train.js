@@ -1,22 +1,33 @@
 console.log("Train task ishga tushdi  <--->");
+// MITASK I
+function findSame(arr) {
+    const findSame = arr.filter((ele) => {
+        return ele === 1 ? ele : null;
+    })
+    return findSame;
+}
+const result = findSame([1, 2, 3, 4, 5, 1, 1, 6]);
+console.log("result:", result);
+
+
 
 // MITASK H
 
 // positive sonlarni qaytaruvchi function
-function getPositive(arr) {
-    return arr.filter(num => num > 0);
-}
+//function getPositive(arr) {
+//  return arr.filter(num => num > 0).join(",");
+//}
 
-const result = getPositive([-1, 2, -3, 4, -5, 6]);
-console.log("result:", result);
+//const result = getPositive([-1, 2, -3, 4, -5, 6]);
+//console.log("result:", result);
 
 // negative sonlarni qaytaruvchi function
-function getNegative(arr) {
-    return arr.filter(num => num < 0);
-}
+//function getNegative(arr) {
+//return arr.filter(num => num < 0).join(",");
+//}
 
-const negativeResult = getNegative([-1, 2, -3, 4, -5, 6]);
-console.log("negative result:", negativeResult);
+//const negativeResult = getNegative([-1, 2, -3, 4, -5, 6]);
+//console.log("negative result:", negativeResult);
 
 // MITASK G
 //function kattaIndex(arr) {
