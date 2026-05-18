@@ -1,13 +1,25 @@
 console.log("Train task ishga tushdi  <--->");
-// MITASK I
-function findSame(arr) {
-    const findSame = arr.filter((ele) => {
-        return ele === 1 ? ele : null;
-    })
-    return findSame;
+
+// MITASK J
+
+function longWord(sentence) {
+    return sentence
+        .split(" ")
+        .sort((a, b) => b.length - a.length)[0];
 }
-const result = findSame([1, 2, 3, 4, 5, 1, 1, 6]);
+const result = longWord("I am a student of engineering");
 console.log("result:", result);
+
+
+// MITASK I
+//function findSame(arr) {
+// const findSame = arr.filter((ele) => {
+//    return ele === 1 ? ele : null;
+// })
+// return findSame;
+//}
+//const result = findSame([1, 2, 3, 4, 5, 1, 1, 6]);
+//console.log("result:", result);
 
 
 
