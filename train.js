@@ -1,14 +1,29 @@
 console.log("Train task ishga tushdi  <--->");
 
+// MITASK K
+
+const countVowels = matn => {
+    const unlilar = "aeiouAEIOU";
+    const harflar = matn.split("").filter(harf => /[a-zA-Z]/.test(harf));
+    return {
+        unli: harflar.filter(harf => unlilar.includes(harf))
+    };
+};
+
+console.log(countVowels("the tasks are not the same as the previous ones"));
+
+
+
+
 // MITASK J
 
-function longWord(sentence) {
-    return sentence
-        .split(" ")
-        .sort((a, b) => b.length - a.length)[0];
-}
-const result = longWord("I am a student of engineering");
-console.log("result:", result);
+//function longWord(sentence) {
+// return sentence
+//     .split(" ")
+//     .sort((a, b) => b.length - a.length)[0];
+//}
+//const result = longWord("I am a student of engineering");
+//console.log("result:", result);
 
 
 // MITASK I
